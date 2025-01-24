@@ -19,16 +19,6 @@ abstract class HashableContainer extends Container {
 
 Block
 ```ts
-export class Block extends HashableContainer {
-    public index: Uint64;
-    public slotIndex: Uint64;
-    public hash: Uint256;
-    public previousHash: Uint256;
-    public timestamp: Uint64;
-    public minter: AddressHex;
-    public signature: Signature;
-    public body: BlockBody;
-    public readonly version: PX = PX.A_00;
-}
+
 ```
 
