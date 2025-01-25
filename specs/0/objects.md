@@ -30,5 +30,11 @@ export class Block extends HashableContainer {
     public body: BlockBody;
     public readonly version: PX = PX.A_00;
 }
+
+export class BlockBody extends Container {
+    public transactions: Transaction[];
+    public slashings: Slashing[];
+}
+
 ```
 
