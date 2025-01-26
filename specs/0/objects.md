@@ -35,6 +35,20 @@ export class BlockBody extends Container {
     public transactions: Transaction[];
     public slashings: Slashing[];
 }
+```
 
+Transaction:
+```ts
+export class Transaction extends HashableContainer {
+    public txid: Uint256;
+    public senderAddress: AddressHex;
+    public recipientAddress: AddressHex;
+    public amount: Uint64;
+    public nonce: Uint64;
+    public timestamp: Uint64;
+    public input: Uint;
+    public signature: Signature;
+    public readonly version = PX.V_00;
+}
 ```
 
