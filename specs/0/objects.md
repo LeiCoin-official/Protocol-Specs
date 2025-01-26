@@ -52,3 +52,18 @@ export class Transaction extends HashableContainer {
 }
 ```
 
+HexAddress:
+```ts
+
+/*
+<----------- Address (21 Bytes) ----------->
+
+Address Version    Address Body
+ | <-------------------------------------->
+00 AF3B4C2D40D836269DD51D817351467470943FBF
+
+*/
+export class AddressHex extends FixedUint {
+    public static readonly byteLength = 21;
+}
+```
