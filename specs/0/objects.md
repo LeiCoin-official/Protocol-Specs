@@ -73,10 +73,6 @@ export class Address32 {
 
     private static address32Chars = '123456789abcdefghjklmnpqrstuvwyz';
 
-    public static getType(address32: string) {
-        return address32.slice(2, 4);
-    }
-
     public static toAddressHex(address32: string) {
 
         const address32Data = "2" + address32.slice(4).toLowerCase();
@@ -100,18 +96,6 @@ export class Address32 {
         return "lc" + DataUtils.replaceAtIndex(addressHex.getType().toHex(), "0", "x", 1) + address32.slice(1);
     }
 
-    public static fromPublicKey(addressType: PX, publicKey: PublicKey) {
-        return this.fromAddressHex(AddressHex.fromPublicKey(addressType, publicKey));
-    }
-
-    public static fromPrivateKey(addressType: PX, privateKey: PrivateKey) {
-        return this.fromPublicKey(addressType, LCrypt.getPublicKeyFromPrivateKey(privateKey));
-    }
-
-    public static fromSignature(hash: Uint256, signature: Signature) {
-        const publicKey = LCrypt.getPublicKeyFromSignature(hash, signature);
-        return this.fromPublicKey(signature.getSignerType(), publicKey);
-    }
-
 }
 ```
+
